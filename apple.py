@@ -16,9 +16,9 @@ import pandas as pd
 import re
 
 #사용할 시트 ID
-SPREADSHEET_ID = "17a5600aat0rFKToNRDoAcmmItzqv4XKxX8x6vlCbnHk"
+SPREADSHEET_ID = os.getevn("peaches_one_universe")
 #나의 권한 Key
-GOOGLE_APPLICATION_CREDENTIALS="/content/sujin-project-337610-b52c3eacd85e.json"
+GOOGLE_APPLICATION_CREDENTIALS = os.getevn("NO_TRESPASSING_APPLE_ONLY")
 
 #어떤 권한이 필요한지
 scope = ["https://spreadsheets.google.com/feeds",

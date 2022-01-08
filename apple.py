@@ -1,6 +1,3 @@
-!pip install --upgrade gspread==4.0.1
-!pip install --upgrade gspread_formatting
-
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 import gspread

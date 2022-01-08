@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: sujin_oh
 
 # Controls when the workflow will run
 on:
@@ -33,6 +33,14 @@ jobs:
       - name: Run a one-line script
         run: pip install --upgrade gspread_formatting
         
+      - name: Run a one-line script
+        run: pip install beautifulsoup4
+
+      - name: Run a one-line script
+        run: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+        
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: python apple.py
+        
+        

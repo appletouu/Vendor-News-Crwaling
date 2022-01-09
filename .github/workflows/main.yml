@@ -40,7 +40,17 @@ jobs:
         run: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
       
       - name: Run a one-line script
-        run: pip install --upgrade oauth2client       
+        run: pip install --upgrade oauth2client
+        
+        
+      - name: Run a one-line script
+        run: pip install --upgrade oauth2client        
+
+      - name: Run a one-line script
+        run: pip install --upgrade gspread_dataframe
+
+      - name: Run a one-line script
+        run: pip install pandas
         
       # Runs a single command using the runners shell
       - name: Run a one-line script

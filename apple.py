@@ -87,7 +87,6 @@ for keyword in keywords:
 
     #새로운 크롤링 데이터 가져와서
     existing_news = gd.get_as_dataframe(ws, parse_dates=True, usecols=[0,1,2,3], skiprows=1, header=None).dropna(0, 'all')
-    display(existing_news)
 
 
     updated = existing_news.append(news_data)

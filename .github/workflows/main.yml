@@ -38,6 +38,9 @@ jobs:
 
       - name: Run a one-line script
         run: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+      
+      - name: Run a one-line script
+        run: pip install --upgrade oauth2client       
         
       # Runs a single command using the runners shell
       - name: Run a one-line script

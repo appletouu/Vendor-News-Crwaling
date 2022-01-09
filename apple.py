@@ -50,12 +50,16 @@ for keyword in keywords:
         title = news_result.select_one(".news_tit").text
         press_name = news_result.select_one(".info.press").text
         link = news_result.select_one(".news_tit")["href"]
-        news_date = soup.select_one('span.info').get_text().replace('.', '')
+        news_dates = news_result.select('span.info')
+        # (A면1단, 날짜) 형태로 되어 있는 경우 처리
+        if len(news_dates) > 1 :
+          news_date = news_dates[1].get_text().replace('.', '')
+        else :
+          news_date = news_dates[0].get_text().replace('.', '')
         
         if  "분" in news_date or "시간 전" in news_date :  
           news_date = str(today_num)
           news_date = datetime.strptime(news_date, '%Y%m%d').strftime('%Y-%m-%d')
-
 
         elif "일 전" in news_date :
           news_date_num = int(re.sub('[\D]', '', news_date))

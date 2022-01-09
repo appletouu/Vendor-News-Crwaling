@@ -25,7 +25,7 @@ scope = ["https://spreadsheets.google.com/feeds",
 
 #Key를 사용해서 권한 정보를 통합 생성
 #creds = ServiceAccountCredentials.from_json_keyfile_name(GOOGLE_APPLICATION_CREDENTIALS, scope)
-creds = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(GOOGLE_APPLICATION_CREDENTIALS), scope)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(GOOGLE_APPLICATION_CREDENTIALS, strict=False), scope)
 
 #구글 스프레드시트 연동 + 시트 열기
 gc = gspread.authorize(creds)

@@ -30,7 +30,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(GOOGLE_APPLI
 #구글 스프레드시트 연동 + 시트 열기
 gc = gspread.authorize(creds)
 
-keywords = os.getenv("KEYWORDS", "마이크로소프트,VMware,델 테크놀로지스,클라우데라").split(',')
+keywords = os.getenv("KEYWORDS", "마이크로소프트,VMware,델 테크놀로지스,클라우데라,컴볼트,카스퍼스키,카카오 엔터프라이즈,멘로시큐리티,넷앱,엔비디아,리미니스트리트,베리타스,SAP").split(',')
 sortType = os.getenv("SORT_TYPE", 0)
 today_str = datetime.today().strftime("%Y%m%d")
 today_num = int(today_str)

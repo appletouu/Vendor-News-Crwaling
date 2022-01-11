@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   # Allows you to run this workflow manually from the Actions tab
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: "*/10 * * * *"
 
 env:
   KEYWORDS: "속보,IBM,델 테크놀로지스,레드햇,오토메이션애니웨어,퀘스트소프트웨어,HP,SAS코리아,오라클,마이크로소프트,리미니스트리트"

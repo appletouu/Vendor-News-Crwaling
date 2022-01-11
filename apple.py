@@ -93,7 +93,6 @@ for keyword in keywords:
     existing_news = gd.get_as_dataframe(ws, parse_dates=True, usecols=[0,1,2,3]).dropna(0, 'all')
 
     merged_data = pd.concat([news_data, existing_news])
-    display(merged_data)
 
    #중복검사
     ret = merged_data.drop_duplicates(subset=['링크'])

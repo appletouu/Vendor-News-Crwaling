@@ -87,18 +87,19 @@ for keyword in keywords:
     try:
       ws = gc.open_by_key(SPREADSHEET_ID).worksheet(keyword)
     except:
-      ws = gc.open_by_key(SPREADSHEET_ID).add_worksheet(title=keyword, rows="1000", cols="10")
+      ws = gc.open_by_key(SPREADSHEET_ID).add_worksheet(title=keyword, rows="1000", cols="100")
 
     #새로운 크롤링 데이터 가져와서
-    existing_news = gd.get_as_dataframe(ws, parse_dates=True, usecols=[0,1,2,3], skiprows=1, header=None).dropna(0, 'all')
+    existing_news = gd.get_as_dataframe(ws, parse_dates=True, usecols=[0,1,2,3]).dropna(0, 'all')
 
+    merged_data = pd.concat([news_data, existing_news])
+    display(merged_data)
 
-    updated = existing_news.append(news_data)
+   #중복검사
+    ret = merged_data.drop_duplicates(subset=['링크'])
 
-    #중복검사
-    updated.drop_duplicates(subset=['링크'])
-    gd.set_with_dataframe(ws, news_data)
+    gd.set_with_dataframe(ws, ret)
 
     ws.format('1', {'textFormat': {'bold': True}})
-    set_column_widths(ws, [ ('A', 500), ('D:', 500) ])
+    set_column_widths(ws, [ ('A', 500), ('D:', 500) ]) 
 
